@@ -2,13 +2,8 @@
 <%= @error %>
   <form action='/tweets' method="post">
     Content:
-    <input type="text" name="content"><br>
-    Create Your Tweet:
-
-    <input type="submit" name="submit" id="submit">
-
-    <input type="submit" name="submit">
-
+    <input id="content" type="text" name="content">
+    <input class="btn btn-primary" type="submit" value="submit">
   </form>
 
   <% else %>
