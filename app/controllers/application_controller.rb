@@ -13,6 +13,17 @@ class ApplicationController < Sinatra::Base
     erb :home
   end
 
+  
+  # post "/signup" do
+	# 	user = User.new(:username => params[:username], :password => params[:password])
+	# 	if user.save
+	# 		redirect "/login"
+	# 	else
+	# 		redirect "/home"
+	# 	end
+	# end
+
+
   helpers do
 
     def logged_in?

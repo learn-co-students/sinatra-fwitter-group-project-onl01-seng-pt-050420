@@ -1,10 +1,17 @@
 class TweetsController < ApplicationController
+
+  configure do
+    enable :sessions
+    set :session_secret, "secret"
+  end
+
   get '/tweets' do
     if logged_in?
+      @users = current_user
       @tweets = Tweet.all
-      erb :'tweets/tweets'
+      erb :'/tweets/tweets'
     else
-      redirect to '/login'
+      redirect to "/login"
     end
   end
 
