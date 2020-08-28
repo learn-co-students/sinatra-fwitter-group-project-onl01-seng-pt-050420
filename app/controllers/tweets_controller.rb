@@ -7,9 +7,9 @@ class TweetsController < ApplicationController
 
   get '/tweets' do
     if logged_in?
-      @users = current_user
+      @user = current_user
       @tweets = Tweet.all
-      erb :'/tweets/tweets'
+      erb :'/tweets/index'
     else
       redirect to "/login"
     end
@@ -17,7 +17,7 @@ class TweetsController < ApplicationController
 
   get '/tweets/new' do
     if logged_in?
-      erb :'tweets/create_tweet'
+      erb :'tweets/new'
     else
       redirect to '/login'
     end
