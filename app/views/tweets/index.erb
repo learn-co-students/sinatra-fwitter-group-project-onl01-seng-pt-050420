@@ -1,6 +1,12 @@
-<h1>Welcome to Fwitter</h1>
+<h1>Welcome, to Fwitter</h1>
 
-<p><a href="/tweets/new">Create a tweet</a></p>
+<div class="container">
+  <p><a href="/tweets/new">Create a tweet</a></p>
+</div>
 <% @tweets.each_with_index do |tweet, index| %>
-      <a href="/tweets/<%= tweet.id %>"><h4><<%= tweet.content %></h4></a>
+    <div class="container">
+      <a href="/tweets/<%= tweet.id %>"><h4><%= index + 1%>. <%= tweet.content %></h4></a>
+      <p>Creator: <%= User.find_by(id: tweet.user_id).username %></p>
+
+    </div>
 <% end%>

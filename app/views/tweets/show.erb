@@ -1,1 +1,15 @@
 <h3>Tweet Content: <%= @tweet.content %></h3>
+ <% if @tweet.user == current_user%>
+
+        <div class="row">
+          <div class="col-2"><p><a href="/tweets/<%= @tweet.id %>/edit" id="Edit Tweet">Edit Tweet</a></p></div>
+        </div>
+        <div class="row">
+          <div class="col-2"><form action="/tweets/<%= @tweet.id %>" method='post'>
+              <input type="hidden" name="_method" value="delete">
+              <input type="submit" value="Delete Tweet" name = "Delete Tweet">
+              <label for="_method"> Delete Tweet</label><br>
+            </form>
+          </div>
+        </div>
+      <% end %>
