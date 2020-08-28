@@ -1,4 +1,6 @@
-  <p><a href="/tweets/new">Create a tweet</a></p>
+<h1>Welcome to Fwitter</h1>
+
+<p><a href="/tweets/new">Create a tweet</a></p>
 <% @tweets.each_with_index do |tweet, index| %>
       <a href="/tweets/<%= tweet.id %>"><h4><<%= tweet.content %></h4></a>
 <% end%>
