@@ -123,7 +123,6 @@ class ApplicationController < Sinatra::Base
   end
 
   patch '/tweets/:id' do
-    binding.pry
     if logged_in?
       
       if params[:content] == "" || params[:content] == nil
